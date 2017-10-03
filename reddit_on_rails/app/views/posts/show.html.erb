@@ -1,0 +1,31 @@
+<h2><%= @post.title %></h2>
+<h5><%= "by #{@post.author.username}" %></h5>
+
+<p><%= @post.content %></p>
+
+<a href="<%= edit_post_url(@post) %>">Edit Post</a>
+
+
+<h3>Comments</h3>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li>
+      <%= comment.content %>
+      <%= button_to "Remove Content", comment_url(comment), method: :delete %>
+    </li>
+
+  <% end %>
+</ul>
+
+<h3>Add Comment</h3>
+
+<form action="<%= post_comments_url(@post) %>" method="post">
+  <%= auth_token %>
+  <input type="hidden" name="comment[post_id]" value="<%= @post.id %>">
+
+  <label>Write your comment:
+  <input type="text" name="comment[content]" value="">
+  </label>
+
+  <input type="submit" name="" value="Submit comment">
+</form>

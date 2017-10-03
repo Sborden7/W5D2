@@ -1,0 +1,10 @@
+<h2> <%= @sub.title %> </h2>
+
+<h5>by <%= @sub.moderator.username %></h5>
+
+<h4><%= @sub.description %></h4>
+
+<a href="<%= new_post_url %>">New Post</a>
+
+<a href="<%= edit_sub_url(@sub) %>">Edit Sub</a>
+<a href="<%= subs_url %>">All Subs</a>

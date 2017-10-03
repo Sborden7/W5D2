@@ -1,0 +1,30 @@
+/* PHASE 2: Notifications */
+.badge {
+  background: black;
+  padding: 3px 7px;
+  border-radius: 100%;
+}
+
+.badge:hover {
+  background: red;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown ul {
+
+  display: none;
+  position: absolute;
+  background: white;
+  color: black;
+  border: 1px, gray;
+  top: 50px;
+  right: 100px;
+}
+
+.dropdown a:hover + .dropdown ul{
+  display: block;
+}
